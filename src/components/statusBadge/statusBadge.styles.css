@@ -1,0 +1,19 @@
+.icon-with-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.2em;
+	margin-top: 0.5em;
+}
+.status-delivered {
+	color: darkgreen;
+}
+.status-progress {
+	color: #6c2a7a;
+}
+.status-ready {
+	color: #3e4be0;
+}
+.status-info-received {
+	color: #e0843e;
+}
