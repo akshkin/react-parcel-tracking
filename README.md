@@ -1,16 +1,17 @@
-# React + Vite
+# Parcel Tracking Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple application that allows users to view their parcels, along with some information, and filter them.
 
-Currently, two official plugins are available:
+### Prerequisites
+- Git
+- Node.js
+- npm
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Steps to set up the project
+- Clone the repository using `git clone`
+- Run `npm install`
+- Run `npm run dev` which will start the local development server.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Additional features to be added
+- Search functionality
+- Support multiple countries and languages
