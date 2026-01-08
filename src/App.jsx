@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import PackageItem from "./components/packageItem/PackageItem";
 import { ImSpinner3 } from "react-icons/im";
 import { RiCloseLargeLine } from "react-icons/ri";
 import PackageDetails from "./components/packageDetails/PackageDetails";
-import { STATUS_MAP } from "./constants";
 import FilterBar from "./components/filter-bar/FilterBar";
+import PackageList from "./components/package-list/PackageList";
 
 function App() {
 	const [isLoading, setisLoading] = useState(false);
@@ -28,7 +27,6 @@ function App() {
 				if (data.error) {
 					setErrorText("An error occured. Please try again later.");
 				} else {
-					console.log(data);
 					setPackageData(data);
 					setFilteredPackages(data);
 				}
@@ -69,16 +67,11 @@ function App() {
 					<FilterBar filter={filter} handleFilterChange={handleFilterChange} />
 
 					{filteredPackages.length > 0 ? (
-						<div className="package-list-grid">
-							{filteredPackages.map((packageItem) => (
-								<PackageItem
-									key={packageItem.id}
-									packageItem={packageItem}
-									setSelectedPackage={setSelectedPackage}
-									setOpenModal={setOpenModal}
-								/>
-							))}
-						</div>
+						<PackageList
+							packages={filteredPackages}
+							setSelectedPackage={setSelectedPackage}
+							setOpenModal={setOpenModal}
+						/>
 					) : (
 						<p
 							style={{
