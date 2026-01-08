@@ -5,6 +5,7 @@ import { ImSpinner3 } from "react-icons/im";
 import { RiCloseLargeLine } from "react-icons/ri";
 import PackageDetails from "./components/packageDetails/PackageDetails";
 import { STATUS_MAP } from "./constants";
+import FilterBar from "./components/filter-bar/FilterBar";
 
 function App() {
 	const [isLoading, setisLoading] = useState(false);
@@ -65,24 +66,7 @@ function App() {
 				<p className="error-text">{errorText}</p>
 			) : (
 				<>
-					<div className="filter-bar">
-						<button
-							className={filter === "all" ? "filter-btn active" : "filter-btn"}
-							onClick={() => handleFilterChange("all")}
-						>
-							All
-						</button>
-
-						{Object.entries(STATUS_MAP).map(([key, info]) => (
-							<button
-								key={key}
-								className={filter === key ? "filter-btn active" : "filter-btn"}
-								onClick={() => handleFilterChange(key)}
-							>
-								{info.label}
-							</button>
-						))}
-					</div>
+					<FilterBar filter={filter} handleFilterChange={handleFilterChange} />
 
 					{filteredPackages.length > 0 ? (
 						<div className="package-list-grid">
