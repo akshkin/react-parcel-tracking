@@ -1,7 +1,7 @@
 import { formatDate } from "../../utils";
-import FieldLabel from "../fieldValue/FieldLabel";
-import "../packageItem/packageItem.styles.css";
-import "./packageDetails.styles.css";
+import FieldLabel from "../field-value/FieldLabel";
+import "../package-item/package-item.styles.css";
+import "./package-details.styles.css";
 import { PiWarningLight } from "react-icons/pi";
 
 function PackageDetails({ packageItem }) {

@@ -1,4 +1,4 @@
-import "./fieldLabel.styles.css";
+import "./field-label.styles.css";
 
 function FieldItem({ label, value }) {
 	return (

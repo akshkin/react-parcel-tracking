@@ -1,6 +1,6 @@
-import "./packageItem.styles.css";
+import "./package-item.styles.css";
 import { PiPackageThin } from "react-icons/pi";
-import StatusBadge from "../statusBadge/StatusBadge";
+import StatusBadge from "../status-badge/StatusBadge";
 
 function PackageItem({ packageItem, setSelectedPackage, setOpenModal }) {
 	const { status, sender, parcel_id } = packageItem;

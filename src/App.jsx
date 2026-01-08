@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { ImSpinner3 } from "react-icons/im";
 import { RiCloseLargeLine } from "react-icons/ri";
-import PackageDetails from "./components/packageDetails/PackageDetails";
+import PackageDetails from "./components/package-details/PackageDetails";
 import FilterBar from "./components/filter-bar/FilterBar";
 import PackageList from "./components/package-list/PackageList";
 

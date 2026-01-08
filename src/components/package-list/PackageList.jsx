@@ -1,4 +1,4 @@
-import PackageItem from "../packageItem/PackageItem";
+import PackageItem from "../package-item/PackageItem";
 import "./package-list.styles.css";
 
 function PackageList({ packages, setSelectedPackage, setOpenModal }) {
