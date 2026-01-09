@@ -20,8 +20,8 @@ function App() {
 			setisLoading(true);
 			try {
 				const response = await fetch(
-					// "https://my.api.mockaroo.com/orders.json?key=e49e6840"
-					"../data.json"
+					"https://my.api.mockaroo.com/orders.json?key=e49e6840"
+					// "../data.json"
 				);
 				const data = await response.json();
 				if (data.error) {

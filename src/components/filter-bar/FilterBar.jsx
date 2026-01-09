@@ -3,7 +3,6 @@ import FilterItem from "./FilterItem";
 import "./filter-bar.styles.css";
 
 function FilterBar({ filter, handleFilterChange }) {
-	console.log("FilterBar render", filter);
 	return (
 		<div className="filter-bar">
 			<button
