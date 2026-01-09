@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import PackageItem from "./components/packageItem/PackageItem";
 import { ImSpinner3 } from "react-icons/im";
 import { RiCloseLargeLine } from "react-icons/ri";
-import PackageDetails from "./components/packageDetails/PackageDetails";
-import { STATUS_MAP } from "./constants";
+import PackageDetails from "./components/package-details/PackageDetails";
+import FilterBar from "./components/filter-bar/FilterBar";
+import PackageList from "./components/package-list/PackageList";
 
 function App() {
 	const [isLoading, setisLoading] = useState(false);
@@ -20,14 +20,13 @@ function App() {
 			setisLoading(true);
 			try {
 				const response = await fetch(
-					// "https://my.api.mockaroo.com/orders.json?key=e49e6840"
-					"../data.json"
+					"https://my.api.mockaroo.com/orders.json?key=e49e6840"
+					// "../data.json"
 				);
 				const data = await response.json();
 				if (data.error) {
 					setErrorText("An error occured. Please try again later.");
 				} else {
-					console.log(data);
 					setPackageData(data);
 					setFilteredPackages(data);
 				}
@@ -65,36 +64,14 @@ function App() {
 				<p className="error-text">{errorText}</p>
 			) : (
 				<>
-					<div className="filter-bar">
-						<button
-							className={filter === "all" ? "filter-btn active" : "filter-btn"}
-							onClick={() => handleFilterChange("all")}
-						>
-							All
-						</button>
-
-						{Object.entries(STATUS_MAP).map(([key, info]) => (
-							<button
-								key={key}
-								className={filter === key ? "filter-btn active" : "filter-btn"}
-								onClick={() => handleFilterChange(key)}
-							>
-								{info.label}
-							</button>
-						))}
-					</div>
+					<FilterBar filter={filter} handleFilterChange={handleFilterChange} />
 
 					{filteredPackages.length > 0 ? (
-						<div className="package-list-grid">
-							{filteredPackages.map((packageItem) => (
-								<PackageItem
-									key={packageItem.id}
-									packageItem={packageItem}
-									setSelectedPackage={setSelectedPackage}
-									setOpenModal={setOpenModal}
-								/>
-							))}
-						</div>
+						<PackageList
+							packages={filteredPackages}
+							setSelectedPackage={setSelectedPackage}
+							setOpenModal={setOpenModal}
+						/>
 					) : (
 						<p
 							style={{

@@ -1,0 +1,10 @@
+.package-list-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 1em;
+	justify-content: center;
+	place-content: center;
+	grid-auto-columns: max-content;
+	max-width: 1200px;
+	margin: 0 auto;
+}

@@ -15,21 +15,6 @@ p {
 	text-align: center;
 }
 
-.package-list-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	gap: 1em;
-	justify-content: center;
-	place-content: center;
-	grid-auto-columns: max-content;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-.package-list-grid:has(.package-item) {
-	margin-top: 1em;
-}
-
 .modal-overlay {
 	position: fixed;
 	inset: 0;
@@ -62,29 +47,6 @@ p {
 	&:hover {
 		background: none;
 	}
-}
-
-.filter-bar {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin-bottom: 1rem;
-	justify-content: center;
-}
-
-.filter-btn {
-	padding: 0.4rem 0.8rem;
-	border-radius: 6px;
-	border: 1px solid #ccc;
-	background: #f7f7f7;
-	cursor: pointer;
-	font-size: 0.9rem;
-}
-
-.filter-btn.active {
-	background: #0e7c7b;
-	color: white;
-	border-color: #0e7c7b;
 }
 
 .spinner {

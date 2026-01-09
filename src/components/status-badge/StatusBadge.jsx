@@ -1,5 +1,5 @@
 import { STATUS_MAP } from "../../constants";
-import "./statusBadge.styles.css";
+import "./status-badge.styles.css";
 
 function StatusBadge({ status }) {
 	const info = STATUS_MAP[status] ?? {
